@@ -1,0 +1,68 @@
+﻿<Window x:Class="MultiTriggerStyles.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MultiTriggerStyles"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="250" Width="500"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+            <CheckBox x:Name="cbApple" 
+                      Content="Apple"
+                      Margin="0,30,30,0">
+                
+            </CheckBox>
+            <CheckBox x:Name="cbOrange"
+                      Content="Orange"
+                      Margin="30 30 0 0"/>
+
+        </StackPanel>
+        <StackPanel Margin="0 100 0 0">
+            <TextBlock HorizontalAlignment="Center"
+                       FontSize="25">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Text" Value="You haven't choosen"/>
+                        <Setter Property="Foreground" Value="Black"/>
+                        <Style.Triggers>
+                            
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding ElementName=cbApple, Path=IsChecked}" Value="true"/>
+                                    <Condition Binding="{Binding ElementName=cbOrange, Path=IsChecked}" Value="false"/>
+                                </MultiDataTrigger.Conditions>
+                                <Setter Property="Text" Value="You choose Apple"/>
+                                <Setter Property="Foreground" Value="Red"/>
+                            </MultiDataTrigger>
+                            
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding ElementName=cbApple, Path=IsChecked}" Value="false"/>
+                                    <Condition Binding="{Binding ElementName=cbOrange, Path=IsChecked}" Value="true"/>
+                                </MultiDataTrigger.Conditions>
+                                <Setter Property="Text" Value="You choose Orange"/>
+                                <Setter Property="Foreground" Value="Orange"/>
+                            </MultiDataTrigger>
+
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding ElementName=cbApple, Path=IsChecked}" Value="true"/>
+                                    <Condition Binding="{Binding ElementName=cbOrange, Path=IsChecked}" Value="true"/>
+                                </MultiDataTrigger.Conditions>
+                                <Setter Property="Text" Value="You choose Apple und Orange"/>
+                                <Setter Property="Foreground" Value="Green"/>
+                            </MultiDataTrigger>
+                        </Style.Triggers>
+
+                    </Style>
+                </TextBlock.Style>
+                
+            </TextBlock>
+            
+        </StackPanel>
+
+    </Grid>
+</Window>

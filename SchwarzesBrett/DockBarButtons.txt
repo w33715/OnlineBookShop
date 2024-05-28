@@ -1,0 +1,255 @@
+ <!-- // Doc Bar // -->
+            <Grid Grid.Row="3"
+                  Grid.Column="1"
+                  Grid.ColumnSpan="4"
+                 >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="740"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="1"
+                        Background="#323345"
+                        CornerRadius="10,10,0,0"
+                        Margin="0,5,0,0">
+                    
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition Width="70"/>
+
+                            <ColumnDefinition Width="20"/>
+                        </Grid.ColumnDefinitions>
+                        <!-- // Home // -->
+                        <Button Grid.Column="1" 
+                                x:Name="home"
+                                Style="{StaticResource CathegoryBtnStyle}">
+                            <Button.Background>
+                                <ImageBrush ImageSource="D:\Programmierung\Projekte_C#\SchwarzesBrett\DockBarMenu\Assets\home.png"
+                                            Stretch="Uniform"/>
+                            </Button.Background>
+                            <Popup Width="70"
+                                   HorizontalOffset="-12"
+                                   PlacementTarget="{Binding ElementName=home}"
+                                   IsOpen="{Binding ElementName=home,Path=IsMouseOver,Mode=OneWay}"
+                                   Style="{StaticResource PopupStyle}">
+                                <Grid>
+                                    <Border Style="{StaticResource border}">
+                                        <TextBlock Text="Home"
+                                                   Style="{StaticResource PopupText}"/>
+                                    </Border>
+                                    <Path Style="{StaticResource ArrowPath}"/>
+                                </Grid>
+                            </Popup>
+                        </Button>
+                        <!-- // Setting //-->
+                        <Button Grid.Column="2" 
+                                x:Name="setting"
+                                Style="{StaticResource CathegoryBtnStyle}">
+                            <Button.Background>
+                                <ImageBrush ImageSource="D:\Programmierung\Projekte_C#\SchwarzesBrett\DockBarMenu\Assets\process.png"
+                                            Stretch="Uniform"/>
+                            </Button.Background>
+                            <Popup Width="85"
+                                   HorizontalOffset="-20"
+                                   PlacementTarget="{Binding ElementName=setting}"
+                                   IsOpen="{Binding ElementName=setting,Path=IsMouseOver,Mode=OneWay}"
+                                   Style="{StaticResource PopupStyle}">
+                                <Grid>
+                                    <Border Style="{StaticResource border}">
+                                        <TextBlock Text="Settings"
+                                                   Style="{StaticResource PopupText}"/>
+                                    </Border>
+                                    <Path Style="{StaticResource ArrowPath}"/>
+                                </Grid>
+                            </Popup>
+                        </Button>
+                        <!-- // Mail //-->
+                        <Button Grid.Column="3" 
+                                x:Name="mail"
+                                Style="{StaticResource CathegoryBtnStyle}">
+                            <Button.Background>
+                                <ImageBrush ImageSource="D:\Programmierung\Projekte_C#\SchwarzesBrett\DockBarMenu\Assets\mail.png"
+                                            Stretch="Uniform"/>
+                            </Button.Background>
+                            <Popup Width="60"
+                                   HorizontalOffset="-6"
+                                   PlacementTarget="{Binding ElementName=mail}"
+                                   IsOpen="{Binding ElementName=mail,Path=IsMouseOver,Mode=OneWay}"
+                                   Style="{StaticResource PopupStyle}">
+                                <Grid>
+                                    <Border Style="{StaticResource border}">
+                                        <TextBlock Text="Mail"
+                                                   Style="{StaticResource PopupText}"/>
+                                    </Border>
+                                    <Path Style="{StaticResource ArrowPath}"/>
+                                </Grid>
+                            </Popup>
+                        </Button>
+                        <!-- // Chart // -->
+                        <Button Grid.Column="4" 
+                                x:Name="chart"
+                                Style="{StaticResource CathegoryBtnStyle}">
+                            <Button.Background>
+                                <ImageBrush ImageSource="D:\Programmierung\Projekte_C#\SchwarzesBrett\DockBarMenu\Assets\chart.png"
+                                            Stretch="Uniform"/>
+                            </Button.Background>
+                            <Popup Width="118"
+                                   HorizontalOffset="-35"
+                                   PlacementTarget="{Binding ElementName=chart}"
+                                   IsOpen="{Binding ElementName=chart,Path=IsMouseOver,Mode=OneWay}"
+                                   Style="{StaticResource PopupStyle}">
+                                <Grid>
+                                    <Border Style="{StaticResource border}">
+                                        <TextBlock Text="Chart"
+                                                   Style="{StaticResource PopupText}"/>
+                                    </Border>
+                                    <Path Style="{StaticResource ArrowPath}"/>
+                                </Grid>
+                            </Popup>
+                        </Button>
+                        <!-- // Calendar // -->
+                        <Button Grid.Column="5" 
+                                x:Name="shopping_cart"
+                                Style="{StaticResource CathegoryBtnStyle}">
+                            <Button.Background>
+                                <ImageBrush ImageSource="D:\Programmierung\Projekte_C#\SchwarzesBrett\DockBarMenu\Assets\shopping_cart.png"
+                                            Stretch="Uniform"/>
+                            </Button.Background>
+                            <Popup Width="85"
+                                   HorizontalOffset="-19"
+                                   PlacementTarget="{Binding ElementName=shopping_cart}"
+                                   IsOpen="{Binding ElementName=shopping_cart,Path=IsMouseOver,Mode=OneWay}"
+                                   Style="{StaticResource PopupStyle}">
+                                <Grid>
+                                    <Border Style="{StaticResource border}">
+                                        <TextBlock Text="Shopping"
+                                                   Style="{StaticResource PopupText}"/>
+                                    </Border>
+                                    <Path Style="{StaticResource ArrowPath}"/>
+                                </Grid>
+                            </Popup>
+                        </Button>
+                        <Button Grid.Column="6" 
+                                x:Name="calendar"
+                                Style="{StaticResource CathegoryBtnStyle}" Height="50" Margin="10,18,10,0">
+                            <Button.Background>
+                                <ImageBrush ImageSource="D:\Programmierung\Projekte_C#\SchwarzesBrett\DockBarMenu\Assets\calendar.png"
+                                            Stretch="Uniform"/>
+                            </Button.Background>
+                            <Popup Width="85"
+                                   HorizontalOffset="-18"
+                                   PlacementTarget="{Binding ElementName=calendar}"
+                                   IsOpen="{Binding ElementName=calendar,Path=IsMouseOver,Mode=OneWay}"
+                                   Style="{StaticResource PopupStyle}">
+                                <Grid>
+                                    <Border Style="{StaticResource border}">
+                                        <TextBlock Text="Calendar"
+                                                   Style="{StaticResource PopupText}"/>
+                                    </Border>
+                                    <Path Style="{StaticResource ArrowPath}"/>
+                                </Grid>
+                            </Popup>
+                        </Button>
+                        <Button Grid.Column="7" 
+                                x:Name="computer"
+                                Style="{StaticResource CathegoryBtnStyle}">
+                            <Button.Background>
+                                <ImageBrush ImageSource="D:\Programmierung\Projekte_C#\SchwarzesBrett\DockBarMenu\Assets\computer.png"
+                                            Stretch="Uniform"/>
+                            </Button.Background>
+                            <Popup Width="85"
+                                   HorizontalOffset="-8"
+                                   PlacementTarget="{Binding ElementName=computer}"
+                                   IsOpen="{Binding ElementName=computer,Path=IsMouseOver,Mode=OneWay}"
+                                   Style="{StaticResource PopupStyle}">
+                                <Grid>
+                                    <Border Style="{StaticResource border}">
+                                        <TextBlock Text="Computer"
+                                                   Style="{StaticResource PopupText}"/>
+                                    </Border>
+                                    <Path Style="{StaticResource ArrowPath}"/>
+                                </Grid>
+                            </Popup>
+                        </Button>
+                        <!-- // Database // -->
+                        <Button Grid.Column="8" 
+                                x:Name="database"
+                                Style="{StaticResource CathegoryBtnStyle}">
+                            <Button.Background>
+                                <ImageBrush ImageSource="D:\Programmierung\Projekte_C#\SchwarzesBrett\DockBarMenu\Assets\database.png"
+                                            Stretch="Uniform"/>
+                            </Button.Background>
+                            <Popup Width="105"
+                                   HorizontalOffset="-27"
+                                   PlacementTarget="{Binding ElementName=database}"
+                                   IsOpen="{Binding ElementName=database,Path=IsMouseOver,Mode=OneWay}"
+                                   Style="{StaticResource PopupStyle}">
+                                <Grid>
+                                    <Border Style="{StaticResource border}">
+                                        <TextBlock Text="Database"
+                                                   Style="{StaticResource PopupText}"/>
+                                    </Border>
+                                    <Path Style="{StaticResource ArrowPath}"/>
+                                </Grid>
+                            </Popup>
+                        </Button>
+                        <!-- // Folder // -->
+                        <Button Grid.Column="9" 
+                                x:Name="folder"
+                                Style="{StaticResource CathegoryBtnStyle}">
+                            <Button.Background>
+                                <ImageBrush ImageSource="D:\Programmierung\Projekte_C#\SchwarzesBrett\DockBarMenu\Assets\folder.png"
+                                            Stretch="Uniform"/>
+                            </Button.Background>
+                            <Popup Width="105"
+                                   HorizontalOffset="-28"
+                                   PlacementTarget="{Binding ElementName=folder}"
+                                   IsOpen="{Binding ElementName=folder,Path=IsMouseOver,Mode=OneWay}"
+                                   Style="{StaticResource PopupStyle}">
+                                <Grid>
+                                    <Border Style="{StaticResource border}">
+                                        <TextBlock Text="Folder"
+                                                   Style="{StaticResource PopupText}"/>
+                                    </Border>
+                                    <Path Style="{StaticResource ArrowPath}"/>
+                                </Grid>
+                            </Popup>
+                        </Button>
+                        <!--// Printer //-->
+                        <Button Grid.Column="10" 
+                                x:Name="printer"
+                                Style="{StaticResource CathegoryBtnStyle}">
+                            <Button.Background>
+                                <ImageBrush ImageSource="D:\Programmierung\Projekte_C#\SchwarzesBrett\DockBarMenu\Assets\printer.png"
+                                            Stretch="Uniform"/>
+                            </Button.Background>
+                            <Popup Width="65"
+                                   HorizontalOffset="-10"
+                                   PlacementTarget="{Binding ElementName=printer}"
+                                   IsOpen="{Binding ElementName=printer,Path=IsMouseOver,Mode=OneWay}"
+                                   Style="{StaticResource PopupStyle}">
+                                <Grid>
+                                    <Border Style="{StaticResource border}">
+                                        <TextBlock Text="Printer"
+                                                   Style="{StaticResource PopupText}"/>
+                                    </Border>
+                                    <Path Style="{StaticResource ArrowPath}"/>
+                                </Grid>
+                            </Popup>
+                        </Button>
+
+
+                    </Grid>
+
+                </Border>
+             </Grid>

@@ -1,0 +1,381 @@
+﻿<UserControl x:Class="ArcGaude.Gaude"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ArcGaude"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="400">
+    <UserControl.Resources>
+        <local:GaugeModel x:Key="model"/>
+        <Style TargetType="{x:Type Path}" x:Key="GaudePanel">
+            <Setter Property="Width" Value="380"/>
+            <Setter Property="Height" Value="380"/>
+            <Setter Property="RenderTransformOrigin" Value="0.5 0.5"/>
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <RotateTransform Angle="45"/>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+        <Style TargetType="{x:Type Path}" x:Key="Separator">
+            <Setter Property="Data" Value="M200,3 L200,397"/>
+            <Setter Property="Stroke" Value="#0d1746"/>
+            <Setter Property="StrokeThickness" Value="2"/>
+            <Setter Property="RenderTransformOrigin" Value="0.5 0.5"/>
+
+        </Style>
+        <Style TargetType="{x:Type TextBlock}" x:Key="TickStyle">
+            <Setter Property="Foreground" Value="Violet"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+        </Style>
+    </UserControl.Resources>
+    <Viewbox Stretch="Fill">
+        <Grid Height="400" Width="400"
+              DataContext="{Binding Source={StaticResource model}}">
+            <Ellipse Width="400"
+                     Height="400"
+                     Fill="#4b5ba0"/>
+            <Ellipse Width="394"
+                     Height="394"
+                     Fill="#0d1746"/>
+            <!-- Gaude Background -->
+            <Path Fill="#364db1" Style="{StaticResource GaudePanel}">
+                <Path.Data>
+                    <PathGeometry>
+                        <PathGeometry.Figures>
+                            <PathFigureCollection>
+                                <PathFigure StartPoint="190,380">
+                                    <PathFigure.Segments >
+                                        <PathSegmentCollection>
+                                            <ArcSegment Size="190,190"
+                                                        IsLargeArc="True"
+                                                        SweepDirection="Clockwise"
+                                                        Point="380,190"/>
+                                            <LineSegment Point="190,190"/>
+                                        </PathSegmentCollection>
+                                    </PathFigure.Segments>
+                                </PathFigure>
+                            </PathFigureCollection>
+                        </PathGeometry.Figures>
+                    </PathGeometry>
+                </Path.Data>
+            </Path>
+            <!-- Gaude -->
+            <Path Fill="#65b0ff" Style="{StaticResource GaudePanel}">
+                <Path.Data>
+                    <PathGeometry>
+                        <PathGeometry.Figures>
+                            <PathFigureCollection>
+                                <PathFigure StartPoint="190,380">
+                                    <PathFigure.Segments >
+                                        <PathSegmentCollection>
+                                            <ArcSegment Size="190,190"
+                                                        IsLargeArc="True"
+                                                        SweepDirection="Clockwise"
+                                                        Point="380,190"
+                                                        x:Name="arcGuide"/>
+                                            <LineSegment Point="190,190"/>
+                                        </PathSegmentCollection>
+                                    </PathFigure.Segments>
+                                </PathFigure>
+                            </PathFigureCollection>
+                        </PathGeometry.Figures>
+                    </PathGeometry>
+                </Path.Data>
+            </Path>
+            <!-- Separator -->
+            <Path Style="{StaticResource Separator }" />
+            <Path Style="{StaticResource Separator }">
+                <Path.RenderTransform>
+                    <RotateTransform Angle="9"/>
+                </Path.RenderTransform>
+            </Path>
+            <Path Style="{StaticResource Separator }">
+                <Path.RenderTransform>
+                    <RotateTransform Angle="18"/>
+                </Path.RenderTransform>
+            </Path>
+            <Path Style="{StaticResource Separator }">
+                <Path.RenderTransform>
+                    <RotateTransform Angle="27"/>
+                </Path.RenderTransform>
+            </Path>
+            <Path Style="{StaticResource Separator }">
+                <Path.RenderTransform>
+                    <RotateTransform Angle="36"/>
+                </Path.RenderTransform>
+            </Path>
+            <Path Style="{StaticResource Separator }">
+                <Path.RenderTransform>
+                    <RotateTransform Angle="45"/>
+                </Path.RenderTransform>
+            </Path>
+            <Path Style="{StaticResource Separator }">
+                <Path.RenderTransform>
+                    <RotateTransform Angle="54"/>
+                </Path.RenderTransform>
+            </Path>
+            <Path Style="{StaticResource Separator }">
+                <Path.RenderTransform>
+                    <RotateTransform Angle="63"/>
+                </Path.RenderTransform>
+            </Path>
+            <Path Style="{StaticResource Separator }">
+                <Path.RenderTransform>
+                    <RotateTransform Angle="72"/>
+                </Path.RenderTransform>
+            </Path>
+            <Path Style="{StaticResource Separator }">
+                <Path.RenderTransform>
+                    <RotateTransform Angle="81"/>
+                </Path.RenderTransform>
+            </Path>
+            <Path Style="{StaticResource Separator }">
+                <Path.RenderTransform>
+                    <RotateTransform Angle="90"/>
+                </Path.RenderTransform>
+            </Path>
+            <Path Style="{StaticResource Separator }">
+                <Path.RenderTransform>
+                    <RotateTransform Angle="99"/>
+                </Path.RenderTransform>
+            </Path>
+            <Path Style="{StaticResource Separator }">
+                <Path.RenderTransform>
+                    <RotateTransform Angle="108"/>
+                </Path.RenderTransform>
+            </Path>
+            <Path Style="{StaticResource Separator }">
+                <Path.RenderTransform>
+                    <RotateTransform Angle="117"/>
+                </Path.RenderTransform>
+            </Path>
+            <Path Style="{StaticResource Separator }">
+                <Path.RenderTransform>
+                    <RotateTransform Angle="126"/>
+                </Path.RenderTransform>
+            </Path>
+            <Path Style="{StaticResource Separator }">
+                <Path.RenderTransform>
+                    <RotateTransform Angle="135"/>
+                </Path.RenderTransform>
+            </Path>
+            <Path Style="{StaticResource Separator }">
+                <Path.RenderTransform>
+                    <RotateTransform Angle="144"/>
+                </Path.RenderTransform>
+            </Path>
+            <Path Style="{StaticResource Separator }">
+                <Path.RenderTransform>
+                    <RotateTransform Angle="144"/>
+                </Path.RenderTransform>
+            </Path>
+            <Path Style="{StaticResource Separator }">
+                <Path.RenderTransform>
+                    <RotateTransform Angle="153"/>
+                </Path.RenderTransform>
+            </Path>
+            <Path Style="{StaticResource Separator }">
+                <Path.RenderTransform>
+                    <RotateTransform Angle="162"/>
+                </Path.RenderTransform>
+            </Path>
+            <Path Style="{StaticResource Separator }">
+                <Path.RenderTransform>
+                    <RotateTransform Angle="171"/>
+                </Path.RenderTransform>
+            </Path>
+            <!-- Center Cicle -->
+            <Ellipse Height="355" 
+                     Width="355"
+                     Fill="#0d1746"/>
+            <!-- Decoration-->
+            <Ellipse Height="235"
+                     Width="138" RenderTransformOrigin="0.5,0.5" Margin="55,5,207,158">
+                <Ellipse.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FF1D2758"/>
+                        <GradientStop Color="#FF0D1746" Offset="1"/>
+                    </RadialGradientBrush>
+                </Ellipse.Fill>
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="46.41"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+            <Ellipse Height="235"
+                     Width="138" RenderTransformOrigin="0.5,0.5" 
+                     Margin="205,160,57,27">
+                <Ellipse.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FF1D2758"/>
+                        <GradientStop Color="#FF0D1746" Offset="1"/>
+                    </RadialGradientBrush>
+                </Ellipse.Fill>
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="43.858"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+            <!-- Tick container -->
+            <Grid Height="355"
+                     Width="355"
+                     x:Name="tick_container"/>
+            <!-- Outer center Circle -->
+            <Ellipse Height="280"
+                     Width="280"
+                     StrokeThickness="10" RenderTransformOrigin="0.5,0.5">
+                <Ellipse.Effect>
+                    <DropShadowEffect/>
+                </Ellipse.Effect>
+                <Ellipse.Fill>
+                    <RadialGradientBrush>
+
+                        <GradientStop Color="#FF212D62" Offset="1"/>
+                        <GradientStop Color="#FF1F2651" Offset="0.865" />
+                    </RadialGradientBrush>
+                </Ellipse.Fill>
+                <Ellipse.Stroke>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+
+                        <LinearGradientBrush.RelativeTransform>
+
+                            <TransformGroup>
+
+                                <ScaleTransform CenterX="0.5"
+                                               CenterY="0.5"/>
+
+
+                                <SkewTransform CenterX="0.5" CenterY="0.5"/>
+
+                                <RotateTransform Angle="-45" CenterX="0.5" CenterY="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </LinearGradientBrush.RelativeTransform>
+
+                        <GradientStop Color="#FF8088B8" Offset="0"/>
+                        <GradientStop Color="#FF5867A2" Offset="1"/>
+                        <GradientStop Color="#FF27336E" Offset="0.226"/>
+                        <GradientStop Color="#FF27336E" Offset="0.804"/>
+                    </LinearGradientBrush>
+                </Ellipse.Stroke>
+            </Ellipse>
+            <!-- Niddle -->
+            <Grid Height="150" Width="20" RenderTransformOrigin="0.5,1.23">
+                <Grid.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="225"
+                                         x:Name="niddle"/>
+                        <TranslateTransform Y="-110"/>
+                    </TransformGroup>
+                </Grid.RenderTransform>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Rectangle Grid.Row="0" Fill="#f34870" Width="4">
+                    <Rectangle.Effect>
+                        <DropShadowEffect Color="#f34370" BlurRadius="21" ShadowDepth="3" Direction="90"/>
+                    </Rectangle.Effect>
+                </Rectangle>
+                <Rectangle Grid.Row="1" Fill="#f34870" 
+                           RadiusX="1"
+                           RadiusY="1">
+                    <Rectangle.Effect>
+                        <DropShadowEffect Color="#f34370" BlurRadius="20" ShadowDepth="3" Direction="90"/>
+                    </Rectangle.Effect>
+                </Rectangle>
+            </Grid>
+            <!-- Inner Center Circle -->
+            <Ellipse Height="215"
+                     Width="215"
+                     StrokeThickness="3" Opacity="0.3">
+                <Ellipse.Effect>
+                    <DropShadowEffect BlurRadius="10"
+                                      Direction="90"/>
+                </Ellipse.Effect>
+                <Ellipse.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FF1F2651" Offset="0.861"/>
+                        <GradientStop Color="#FF212D62" Offset="1"/>
+                    </RadialGradientBrush>
+                </Ellipse.Fill>
+                <Ellipse.Stroke>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#ffced1de" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Ellipse.Stroke>
+            </Ellipse>
+            <Ellipse Width="209"
+                     Height="209"
+                     StrokeThickness="3">
+                <Ellipse.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FF3D4578" Offset="0.9"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </RadialGradientBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Ellipse Width="209"
+                     Height="209"
+                     StrokeThickness="3" RenderTransformOrigin="0.5,0.5">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-45"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+                <Ellipse.Fill>
+                    <LinearGradientBrush
+                        EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#001F2651" Offset="0"/>
+                        <GradientStop Color="#FF0A112C" Offset="1"/>
+
+                    </LinearGradientBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+            <!-- TextBlocks-->
+            <TextBlock Text="{Binding Path=Title}" 
+                       Foreground="White"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Margin="0 0 0 100"
+                       FontSize="16"/>
+            <TextBlock Text="{Binding Path=ValueString}"
+                       Foreground="White"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="32"/>
+            <TextBlock Text="{Binding Path=Unit}"
+                       Foreground="White"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="20"
+                       Margin="0 100 0 0"/>
+            <TextBlock Text="{Binding Path=TickUnit}"
+                       Foreground="White"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Bottom"
+                       FontSize="24"
+                       Margin="0 0 0 15"/>
+        </Grid>
+    </Viewbox>
+</UserControl>

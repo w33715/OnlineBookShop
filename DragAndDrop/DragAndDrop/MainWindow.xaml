@@ -1,0 +1,39 @@
+﻿<Window x:Class="DragAndDrop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DragAndDrop"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+   
+    <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+        BorderBrush="Black" BorderThickness="3">
+        <Canvas x:Name="canvas"
+            AllowDrop="True"
+                Background="White"
+                DragOver="canvas_DragOver"
+                Drop="canvas_Drop">
+            <Rectangle
+                x:Name="redRectangle"
+                MouseMove="Rectangle_MouseMove"
+                Canvas.Left="50"
+                Canvas.Top="50"
+                Width="50"
+                Height="50"
+                Fill="Red"/>
+        </Canvas>
+    </Border>
+        <local:UserControl1 Grid.Row="1" Grid.Column="0" x:Name="Canvas1"/>
+        <local:UserControl2 Grid.Row="1" Grid.Column="2" x:Name="Canvas2"/>
+    </Grid>
+</Window>

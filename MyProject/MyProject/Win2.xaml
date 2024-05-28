@@ -1,0 +1,44 @@
+﻿<Window x:Class="MyProject.Win2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyProject"
+        mc:Ignorable="d"
+        x:Name="Winds2"
+        Title="Win2" Height="800" Width="600" MouseDown="Winds2_MouseDown">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="70"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="50"/>
+
+        </Grid.RowDefinitions>
+        <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtTest" Height="50" Width="100" Foreground="Black">
+
+        </TextBox>
+        <Button Grid.Row="2" Grid.Column="2" Height="50" Width="100" 
+                HorizontalAlignment="Center" Content="Close" 
+                Click="Button_Click" VerticalAlignment="Center">
+
+        </Button>
+        <Image Grid.Row="1" Grid.Column="1" Height="600" Width="450"
+              Source="D:\Programmierung\Projekte_C#\MyProject\MyProject\Deutschland_transparent.png" ></Image>
+        <ToggleButton x:Name="btn39" Tag="39" Grid.Column="1" Content="39" HorizontalAlignment="Left" Margin="255,219,0,0" Grid.Row="1" VerticalAlignment="Top" 
+                      Background="#FFE21414" Foreground="#FFFBEAEA" IsChecked="False"
+                      Unchecked="btn39_Unchecked" Checked="btn39_Checked"  Click="Btn_Click" Width="20"/>
+        <ToggleButton x:Name="btn38" Tag="38" Grid.Column="1" Content="38" HorizontalAlignment="Left" Margin="230,260,0,0" Grid.Row="1" VerticalAlignment="Top" 
+                      Background="#FFE21414" Foreground="#FFFBEAEA"
+                       Unchecked="btn38_Unchecked" Checked="btn38_Checked"
+                      IsChecked="False" Click="Btn_Click" Width="22"/>
+        <ToggleButton x:Name="btn06" Tag="06" Grid.Column="1" Content="06" HorizontalAlignment="Left" Margin="263,0,0,0" Grid.Row="1" VerticalAlignment="Center" 
+            Background="#FFE21414" Foreground="#FFFBEAEA"
+            Unchecked="btn06_Unchecked" Checked="btn06_Checked"
+            IsChecked="False" Click="Btn_Click" Width="24"/>
+    </Grid>
+</Window>

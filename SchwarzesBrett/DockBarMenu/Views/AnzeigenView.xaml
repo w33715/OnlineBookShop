@@ -1,0 +1,53 @@
+﻿<Window x:Class="SchwarzesBrett.Views.AnzeigenView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SchwarzesBrett.Views"
+        mc:Ignorable="d"
+        Title="AnzeigenView" Height="900" Width="1500"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Normal"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True">
+
+    <Border CornerRadius="20"
+            BorderThickness="5"
+            Background="{StaticResource panelColor0}"
+            Opacity="0.7">
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="{StaticResource color11}" Offset="0.7"/>
+                <GradientStop Color="{StaticResource color12}" Offset="0.3"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition/>
+                <RowDefinition Height="50"/>
+
+            </Grid.RowDefinitions>
+            <DockPanel Grid.Row="0" Opacity="1" >
+                <TextBlock Text="Vorstand"
+                           
+                           Foreground="{StaticResource panelColor}"
+                           FontSize="38"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center">
+                    
+                </TextBlock>
+                 
+            </DockPanel>
+           <local:VorstandUControl Grid.Row="1" x:Name="UC_Vorstand"/>
+        </Grid>
+        
+        
+        
+        
+    </Border>
+   
+</Window>

@@ -1,0 +1,135 @@
+﻿<Window x:Class="BaseWpfApp4.View.ClientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BaseWpfApp4.View"
+        mc:Ignorable="d"
+        Title="ClientWindow" Height="450" Width="800">
+
+    <Grid HorizontalAlignment="Stretch" Background="#EEEEEE">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="17*"></RowDefinition>
+            <RowDefinition Height="68*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0"  BorderBrush = "CornflowerBlue" BorderThickness="1,1,1,1"  >
+            <Menu FontSize="12"  Background="AliceBlue" >
+                <MenuItem Header="File" Background="AliceBlue">
+                    <MenuItem Header="Close"  Command="{Binding CloseWindow}" Background="AliceBlue" />
+                    <MenuItem Header="Exit" Command="{Binding ExitApplication}" Background="AliceBlue" />
+                </MenuItem>
+                <MenuItem Header="Help" Background="AliceBlue" >
+                    <MenuItem Header="About this application" Background="AliceBlue" />
+                </MenuItem>
+            </Menu>
+        </Border>
+
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40*"></RowDefinition>
+                <RowDefinition Height="10*"></RowDefinition>
+                <RowDefinition Height="20*"></RowDefinition>
+                <RowDefinition Height="30*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <TextBlock FontWeight="Normal" FontSize="20" HorizontalAlignment="Left" Margin="20,5,0,0" TextWrapping="Wrap" Text="Client Maintenance" VerticalAlignment="Top" Foreground="#FF7F7F7F"/>
+            <Rectangle Height="2"  Fill="CornflowerBlue" Grid.Row="1" Margin="0,0,0,3"/>
+            <TextBlock Grid.Row="2" FontFamily="Myriad Pro" FontSize="14" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Client's Personal Information" VerticalAlignment="Top" Foreground="#FF7F7F7F" Margin="20,5,0,0"/>
+        </Grid>
+
+
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"></RowDefinition>
+                <RowDefinition Height="5*"></RowDefinition>
+                <RowDefinition Height="10*"></RowDefinition>
+                <RowDefinition Height="5*"></RowDefinition>
+                <RowDefinition Height="10*"></RowDefinition>
+                <RowDefinition Height="5*"></RowDefinition>
+                <RowDefinition Height="55*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30"></ColumnDefinition>
+                <ColumnDefinition Width="33*"></ColumnDefinition>
+                <ColumnDefinition Width="10"></ColumnDefinition>
+                <ColumnDefinition Width="33*"></ColumnDefinition>
+                <ColumnDefinition Width="10"></ColumnDefinition>
+                <ColumnDefinition Width="33*"></ColumnDefinition>
+                <ColumnDefinition Width="10"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <!--First Line-->
+            <Label Content="First Name" HorizontalAlignment="Left" Grid.Row="0" VerticalAlignment="Top" Width="76" Margin="26,8,0,0" Grid.ColumnSpan="2"/>
+            <TextBox   Grid.Row="0" Grid.Column="1" MaxLength="50" TabIndex="0"  Text="{Binding Client.FirstName,Mode=TwoWay,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}"  VerticalContentAlignment="Center" x:Name="txtFirstName" Height="36"  TextWrapping="Wrap"  VerticalAlignment="Top" Margin="86,0,0,0"  />
+
+            <Label Content="Middle Name" HorizontalAlignment="Left"  Grid.Row="0" Grid.Column="2" VerticalAlignment="Top" Width="84" Margin="5,8,0,0" Grid.ColumnSpan="2"/>
+            <TextBox  Grid.Row="0" Grid.Column="3" MaxLength="50" TabIndex="1"  Text="{Binding Client.MiddleName,Mode=TwoWay,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}"  VerticalContentAlignment="Center"  Height="36"  TextWrapping="Wrap"  VerticalAlignment="Top" Margin="79,0,10,0" Grid.ColumnSpan="2"  />
+
+            <Label Content="Last Name" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="5" VerticalAlignment="Top" Width="76" Margin="-1,8,0,0"/>
+            <TextBox  Grid.Row="0" Grid.Column="5" MaxLength="50" TabIndex="2"  Text="{Binding Client.LastName,Mode=TwoWay,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}"  VerticalContentAlignment="Center"  Height="36"  TextWrapping="Wrap"  VerticalAlignment="Top" Margin="79,0,0,0"  />
+            <!--End of First Line-->
+
+            <!--Second Line-->
+            <Label Content="DOB" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Width="44" Margin="8,2,0,0" Grid.Column="1"/>
+            <DatePicker Grid.Row="2" Grid.Column="1" Style="{StaticResource MahApps.Styles.DatePicker}" TabIndex="3" SelectedDate="{Binding Client.DOB,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"   HorizontalAlignment="Stretch" Height="34"    VerticalAlignment="Top"   Margin="86,4,0,0" />
+
+
+            <Label Content="Gender" HorizontalAlignment="Left"  Grid.Row="2" Grid.Column="3" VerticalAlignment="Top" Width="55" Margin="7,8,0,0"/>
+            <ComboBox TabIndex="4" Grid.Row="2" Grid.Column="3" Height="34"  ItemsSource="{Binding GenderCodes}"  DisplayMemberPath="DisplayMember" SelectedValuePath="Id"  SelectedValue="{Binding Client.GenderCodeId, Mode= TwoWay}"    VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="79,0,10,0" />
+
+            <Label Content="Smoker Status" HorizontalAlignment="Left"  Grid.Row="2" Grid.Column="4" VerticalAlignment="Top" Width="85" Margin="4,8,0,0" Grid.ColumnSpan="2"/>
+            <ComboBox TabIndex="5" Grid.Row="2" Grid.Column="5" Height="34"  ItemsSource="{Binding SmokerCodes}"  DisplayMemberPath="DisplayMember" SelectedValuePath="Id"  SelectedValue="{Binding Client.SmokerStatusCodeId, Mode= TwoWay}"    VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="79,0,10,0" />
+
+            <!--End of Second Line-->
+
+
+            <!--Third Line-->
+            <Label Content="Home Phone" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Top" Width="85" Margin="26,8,0,0" Grid.ColumnSpan="2"/>
+            <TextBox   Grid.Row="4" Grid.Column="1" MaxLength="50" TabIndex="6"  Text="{Binding Client.HomePhone,Mode=TwoWay,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}"  VerticalContentAlignment="Center"  Height="36"  TextWrapping="Wrap"  VerticalAlignment="Top" Margin="86,0,0,0"  />
+
+            <Label Content="Work Phone" HorizontalAlignment="Left"  Grid.Row="4" Grid.Column="2" VerticalAlignment="Top" Width="83" Margin="7,8,0,0" Grid.ColumnSpan="2"/>
+            <TextBox  Grid.Row="4" Grid.Column="3" MaxLength="50" TabIndex="7"  Text="{Binding Client.WorkPhone,Mode=TwoWay,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}"  VerticalContentAlignment="Center"  Height="36"  TextWrapping="Wrap"  VerticalAlignment="Top" Margin="79,0,10,0" Grid.ColumnSpan="2"  />
+
+            <Label Content="Mobile" HorizontalAlignment="Left" Grid.Row="4" Grid.Column="5" VerticalAlignment="Top" Width="57" Margin="5,8,0,0"/>
+            <TextBox  Grid.Row="4" Grid.Column="5" MaxLength="50" TabIndex="8"  Text="{Binding Client.Mobile,Mode=TwoWay,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}"  VerticalContentAlignment="Center"  Height="36"  TextWrapping="Wrap"  VerticalAlignment="Top" Margin="79,0,0,0"  />
+            <!--End of Third Line-->
+
+            <!--Fourth Line-->
+            <Label Content="Client Type" HorizontalAlignment="Left"  Grid.Row="6" Grid.Column="1" VerticalAlignment="Top" Width="85" Margin="4,8,0,0" Grid.ColumnSpan="2"/>
+            <ComboBox TabIndex="9" Grid.Row="5" Grid.Column="1" Height="34"  ItemsSource="{Binding ClientTypeCodes}"  DisplayMemberPath="DisplayMember" SelectedValuePath="Id"  SelectedValue="{Binding Client.ClientTypeCodeId, Mode= TwoWay}"    VerticalAlignment="Top" Margin="86,21,0,0" Grid.RowSpan="2" />
+            <!--End of Fourth Line-->
+        </Grid>
+
+        <Grid Grid.Row="3">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="55*"></ColumnDefinition>
+                <ColumnDefinition Width="15*"></ColumnDefinition>
+                <ColumnDefinition Width="2"></ColumnDefinition>
+                <ColumnDefinition Width="15*"></ColumnDefinition>
+                <ColumnDefinition Width="2"></ColumnDefinition>
+                <ColumnDefinition Width="15*"></ColumnDefinition>
+                <ColumnDefinition Width="10"></ColumnDefinition>
+
+            </Grid.ColumnDefinitions>
+
+            <Rectangle HorizontalAlignment="Stretch" Height="2"  VerticalAlignment="Top"  Fill="CornflowerBlue" Grid.ColumnSpan="7"/>
+
+            <Button  Style="{StaticResource CRUDButton}" Grid.Column="1" TabIndex="10"  Command="{Binding CloseCommand}" Foreground="White" Background="{DynamicResource AccentColorBrush}" Content="Close" HorizontalAlignment="Stretch"  VerticalAlignment="Center"  Height="46" />
+
+            <Button Style="{StaticResource CRUDButton}" Grid.Column="3" TabIndex="11"  Command="{Binding RemoveCommand}" Foreground="White" Background="{DynamicResource AccentColorBrush}" Content="Remove" HorizontalAlignment="Stretch"  VerticalAlignment="Center"  Height="46" />
+
+            <Button Style="{StaticResource CRUDButton}" Grid.Column="5" TabIndex="12"  Command="{Binding SaveCommand}" Foreground="White" Background="{DynamicResource AccentColorBrush}" Content="Save" HorizontalAlignment="Stretch"  VerticalAlignment="Center"  Height="46" />
+
+
+        </Grid>
+    </Grid>
+
+    
+
+
+</Window>

@@ -1,0 +1,32 @@
+﻿<Window x:Class="IValueConverter_INotifyPropertyChanged.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IValueConverter_INotifyPropertyChanged"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="300">
+    <Window.Resources>
+        <local:TextToBoolConvertor x:Key="TextToBoolConvertor"/>
+    </Window.Resources>
+    <Grid Margin="0,2,0,-2">
+        <Label x:Name="label" Content="IvalueConverter" HorizontalAlignment="Left" Margin="92,10,0,0" VerticalAlignment="Top"/>
+        <Label  Content="Value 1:" HorizontalAlignment="Left" Margin="39,149,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtVal1" Text="{Binding Value1, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="95,152,0,0"
+                 VerticalAlignment="Top" Width="180"/>
+        <Label  Content="Value 2:" HorizontalAlignment="Left" Margin="39,187,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtVal2" Text="{Binding Value2, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="95,190,0,0"
+            VerticalAlignment="Top" Width="180" />
+        <Label  Content="SUM:" HorizontalAlignment="Left" Margin="39,222,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtSum" Text="{Binding Sum, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="95,225,0,0"
+            VerticalAlignment="Top" Width="180"/>
+        <Label x:Name="label_Copy" Content="INotifyPropertyChanged" HorizontalAlignment="Left" Margin="58,116,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="checkBox" Content="1 st textBox has Value" 
+                  IsChecked="{Binding Text, ElementName=txtVal1, Converter={StaticResource TextToBoolConvertor}}" HorizontalAlignment="Left" Margin="29,41,0,0" VerticalAlignment="Top" />
+        <CheckBox Content="2nd TextBox has Value" HorizontalAlignment="Left" Margin="29,64,0,0" VerticalAlignment="Top" />
+        <CheckBox Content="3rd TextBox has Value" HorizontalAlignment="Left" Margin="29,84,0,0" VerticalAlignment="Top" />
+        <DocumentViewer Background="#FF945A5A">
+            <FixedDocument/>
+        </DocumentViewer>
+    </Grid>
+</Window>

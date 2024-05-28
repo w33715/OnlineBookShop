@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="QRCode.ScanQR"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:QRCode"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="500">
+    <Grid>
+        <StackPanel>
+            <TextBlock HorizontalAlignment="Center"
+                Text="Scan QR"
+                FontSize="29"
+                FontFamily="Mistral"
+                Foreground="#BF1A33"
+                Margin="10"
+                
+     ></TextBlock>
+            <Image Margin="10"
+            Width="150"
+            Height="150"
+            x:Name="imgQR"></Image>
+            <TextBlock x:Name="txtQR"
+    Margin="20 0"
+           FontSize="16"
+          >
+
+            </TextBlock>
+            <StackPanel Orientation="Horizontal"
+                 HorizontalAlignment="Center">
+
+
+                <Button x:Name="btnScanQR"
+                        Click="btnScanQR_Click" 
+                    HorizontalAlignment="Center" 
+             Background="#BF1A33"
+             BorderBrush="#BF1A33"
+             materialDesign:ButtonAssist.CornerRadius="25"
+             Height="50"
+             Margin="10">
+
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Qrcode"
+                                  Height="25"
+                                  Width="25"
+                                    Margin="0 0 5 0"/>
+                        <TextBlock FontSize="16"
+                        Text="Scan QR"
+                        Margin="10 0"></TextBlock>
+
+                    </StackPanel>
+                </Button>
+
+               
+
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

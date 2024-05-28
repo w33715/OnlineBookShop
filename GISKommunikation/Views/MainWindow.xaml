@@ -1,0 +1,184 @@
+﻿<Window x:Class="GISKommunikation.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GISKommunikation.Views"
+        xmlns:viewModel="clr-namespace:GISKommunikation.ViewModels"
+        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="1300"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent">
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewModel:PersonenViewModel}">
+            <local:PersonalUserControl/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModel:JobsViewModel}">
+            <local:JobsUserControl/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:HauptMenuViewModel}">
+            <local:HauptMenuUserControl/>
+        </DataTemplate>
+
+    </Window.Resources>
+
+    <Grid>
+        <!-- Start Layout -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="50"/>
+
+            <RowDefinition />
+            <RowDefinition Height="60"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" BorderBrush="{StaticResource color11}" BorderThickness="0,0,0,1">
+            <DockPanel  Background="#24105a"  >
+                <TextBlock Margin="10,0" Text="Kommunikationsmodule"
+                       Foreground="{StaticResource titlecolor1}"
+                       FontFamily="Century Gothic"
+                       FontSize="32"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left">
+                </TextBlock>
+                <Button  x:Name="btnClose" DockPanel.Dock="Right"
+                                Style="{StaticResource controlButton}"
+                                Tag="{StaticResource color4}" Height="30" Width="30"
+                                 Click="btnClose_Click" HorizontalAlignment="Right" Margin="0,0,15,0" Cursor="Hand">
+                    <Image Source="G:\Daten\X Programmdateien\Entwicklung\CSharp\GISKommunikation\GISKommunikation\Icons\shutdown_mo.png"/>
+
+                </Button>
+                <Button  x:Name="btnMinimize"
+                                Style="{StaticResource controlButton}"
+                                Tag="{StaticResource color4}" Height="30" Width="30"
+                                 Click="btnMinimize_Click" HorizontalAlignment="Right" Margin="0,0,15,0" Cursor="Hand">
+                    <Image Source="G:\Daten\X Programmdateien\Entwicklung\CSharp\GISKommunikation\GISKommunikation\Icons\minimize_mo.png"/>
+                </Button>
+            </DockPanel>
+        </Border>
+        <DockPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"  Background="#24105a"  HorizontalAlignment="Left" Width="1950"  LastChildFill="True" >
+            <ToggleButton HorizontalAlignment="Left" x:Name="tgbtnMenu" Height="50" Width="50" Background="Transparent"  
+                          Style="{StaticResource normalToggleButton}" Margin="5 0 265 0"  Click="tgbtnMenu_Click">
+                <fa:IconImage Icon="Bars" Foreground="{StaticResource titlecolor1}"/>
+            </ToggleButton>
+            
+             <DockPanel Margin="5 5 0 0"  x:Name="DckPanelEmpl" HorizontalAlignment="Right" VerticalAlignment="Center" Visibility="Collapsed">
+
+                <ToggleButton x:Name="tgbtnPers" Height="30" Width="200" VerticalAlignment="Center" Background="Transparent" DockPanel.Dock="Right"
+                              Style="{StaticResource normalToggleButton}"  Click="tgbtnPers_Click">
+                    <DockPanel>
+                       <fa:IconImage Icon="Users" Foreground="{StaticResource titlecolor1}" HorizontalAlignment="Left"/> 
+                         <TextBlock Text="Personal" Foreground="{StaticResource titlecolor1}" FontSize="28" Margin="5 0 5 0"
+                                     TextAlignment="Center" VerticalAlignment="Center">
+                    
+                </TextBlock>
+                    </DockPanel>
+                    
+                </ToggleButton>
+               
+
+            </DockPanel>
+
+            <DockPanel Margin="5 0 0 0"  x:Name="DckPanelJobs" Visibility="Collapsed">
+
+                <ToggleButton x:Name="tgbtnJobs" Height="50" Width="280" Background="Transparent" Style="{StaticResource normalToggleButton}"  Click="tgbtnJobs_Click">
+                    <DockPanel>
+                        <fa:IconImage Icon="File" Foreground="{StaticResource titlecolor1}"/>
+                        <TextBlock Text="Stellenangebot" Foreground="{StaticResource titlecolor1}" FontSize="28" Margin="5 0 5 0"
+                                     TextAlignment="Center" VerticalAlignment="Center"/>
+                    </DockPanel>
+                    
+                </ToggleButton>
+                
+
+            </DockPanel>
+
+        </DockPanel>
+        
+        
+        
+
+        <StackPanel Grid.Row="2" Grid.Column="0" Background="#24105a" x:Name="MenuPanel" Grid.RowSpan="3">
+
+           
+            <Border BorderBrush="AliceBlue" BorderThickness="0 1" Margin="5 45"  x:Name="FilterBorder" Visibility="Collapsed">
+                
+           
+           <StackPanel Margin="5 10">
+            <CheckBox Height="30" HorizontalAlignment="Left" Content="Serviceleiter" Foreground="{StaticResource titlecolor1}" FontSize="20" Margin="25 10 0 0 " VerticalContentAlignment="Center"
+>
+                
+            </CheckBox>
+            <CheckBox Height="30" HorizontalAlignment="Left" Content="Teamleiter" Foreground="{StaticResource titlecolor1}" FontSize="20" Margin="25 10 0 0" VerticalContentAlignment="Center">
+
+            </CheckBox>
+            <StackPanel>
+                <CheckBox  x:Name="ChBxAlter"  Height="30" HorizontalAlignment="Left" Content="Alter" Foreground="{StaticResource titlecolor1}" FontSize="20" Margin="25 10 0 0" VerticalContentAlignment="Center" 
+                          IsChecked="False" Checked="ChBxAlter_Checked" Unchecked="ChBxAlter_Unchecked" >
+
+                </CheckBox>
+                        
+                        <DockPanel Margin="45 0 0 0 " x:Name="PanelSlAlter1" Visibility="Collapsed">
+                            <TextBlock x:Name="txbSlAlter1" Text="{Binding Source={x:Reference Name=SlAlter1},
+                              Path=Value,
+                              StringFormat= 'F0'}" Foreground="{StaticResource titlecolor1}" Margin="5 0 5 0" FontSize="20" Visibility="Collapsed"/>
+                            <Slider  x:Name="SlAlter1" Width="120" HorizontalAlignment="Left" Margin="5 0" Maximum="32" Minimum="16" Cursor="Hand" VerticalAlignment="Center" Visibility="Collapsed" AutoToolTipPlacement="TopLeft" Value="14" SmallChange="1" SelectionEnd="16" SelectionStart="32" TickFrequency="10000" IsTabStop="False"/>
+                            <TextBlock Text="" Foreground="{StaticResource titlecolor1}" Margin="5 0 5 0" FontSize="20" Visibility="Collapsed"/>
+                        </DockPanel>
+
+                        <DockPanel Margin="65 5 0 0 " x:Name="PanelSlAlter2" Visibility="Collapsed">
+                    <TextBlock   Foreground="{StaticResource titlecolor1}" Margin="5 0 5 0" FontSize="20" />
+                    <Slider  x:Name="SlAlter2" Width="120" HorizontalAlignment="Left" Margin="5 0" Maximum="80" Minimum="32" Cursor="Hand"  Value="70" VerticalAlignment="Center" InputScope="Number" SmallChange="0" TickFrequency="100" Delay="0" Interval="1" ValueChanged="SlAlter2_ValueChanged"/>
+                            <TextBlock x:Name="txbSlAlter2" Text="{Binding Source={x:Reference Name=SlAlter2},
+                              Path=Value,
+                              StringFormat= 'F0'}" Foreground="{StaticResource titlecolor1}" Margin="5 0 5 0" FontSize="20"/>
+                </DockPanel>
+            </StackPanel>
+            <StackPanel>
+                <CheckBox Height="30" HorizontalAlignment="Left" Content="Postleitzahl" Foreground="{StaticResource titlecolor1}" FontSize="20" Margin="25 10 0 0" VerticalContentAlignment="Center" >
+
+                </CheckBox>
+                <DockPanel Margin="45 5 0 0 ">
+                    <TextBlock Text="18" Foreground="{StaticResource titlecolor1}" Margin="5 0 5 0" FontSize="20"/>
+                    <Slider Width="120" HorizontalAlignment="Left" Margin="5 0" Maximum="32" Minimum="18" Cursor="Hand" VerticalAlignment="Center"/>
+                    <TextBlock Text="32" Foreground="{StaticResource titlecolor1}" Margin="5 0 5 0" FontSize="20"/>
+                </DockPanel>
+
+                <DockPanel Margin="65 5 0 0 ">
+                    <TextBlock Text="32" Foreground="{StaticResource titlecolor1}" Margin="5 0 5 0" FontSize="20"/>
+                    <Slider Width="120" HorizontalAlignment="Left" Margin="5 0" Maximum="67" Minimum="32" Cursor="Hand" LargeChange="0" Value="67" VerticalAlignment="Center"/>
+                    <TextBlock Text="67" Foreground="{StaticResource titlecolor1}" Margin="5 0 5 0" FontSize="20"/>
+                </DockPanel>
+            </StackPanel>
+          </StackPanel>
+            </Border>
+           
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Background="#24105a">
+            <Border Background="#FF444444" Margin="10" BorderThickness="1" BorderBrush="Beige" CornerRadius="20">
+                <StackPanel Height="1000">
+                    
+                </StackPanel>
+            </Border>
+            
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Background="#24105a">
+            
+
+        </StackPanel>
+
+    </Grid>
+</Window>

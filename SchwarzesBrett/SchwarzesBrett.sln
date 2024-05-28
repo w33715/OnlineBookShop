@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchwarzesBrett", "DockBarMenu\SchwarzesBrett.csproj", "{24C37A5A-AC63-48EF-8225-9395D28E217E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24C37A5A-AC63-48EF-8225-9395D28E217E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24C37A5A-AC63-48EF-8225-9395D28E217E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24C37A5A-AC63-48EF-8225-9395D28E217E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24C37A5A-AC63-48EF-8225-9395D28E217E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {181B03B2-74C2-4DCF-8FFE-A82DAE01CCCD}
+	EndGlobalSection
+EndGlobal

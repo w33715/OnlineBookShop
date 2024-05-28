@@ -1,0 +1,22 @@
+﻿<Window x:Class="BaseWpfApp4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BaseWpfApp4"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Button Grid.Row="0"  Content="Open Window 1" Command="{Binding OpenWindow1Command}" Margin="30 30 100 30" />
+        <Button Grid.Row="1"  Content="Open Window 2" Command="{Binding OpenWindow2Command}" Margin="30 30 100 30" />
+        <Button Grid.Row="2"  Content="Open Window 3" Command="{Binding OpenWindow1Command}" Margin="30 30 100 30" />
+
+    </Grid>
+</Window>

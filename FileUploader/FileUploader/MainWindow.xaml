@@ -1,0 +1,96 @@
+﻿<Window x:Class="FileUploader.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FileUploader"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        FontSize="15">
+    <Grid Width="700">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/> <!-- Headind -->
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock
+            FontSize="30"
+            FontWeight="SemiBold"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Text="File Upload"/>
+
+        <Separator
+            VerticalAlignment="Bottom"/>
+
+        <Grid 
+            Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <!-- Drag and Drop files here section -->
+
+            <StackPanel VerticalAlignment="Center">
+                <Grid> 
+                <!-- To accept the dropping item... -->
+                <Rectangle
+                    AllowDrop="true"
+                    Drop="Rectangle_Drop"
+                    Fill="WhiteSmoke"
+                    RadiusX="10"
+                    RadiusY="10"
+                    StrokeDashArray="10"
+                    StrokeThickness="2"
+                    StrokeDashCap="Round"
+                    Stroke="Silver"
+                    Height="300"
+                    Width="300"/>
+                
+                <!-- Logo & Text -->
+                <StackPanel HorizontalAlignment="Center"
+                            VerticalAlignment="Center">
+                    <TextBlock Text="Drop files to Upload"
+                               FontSize="20"/>
+                </StackPanel>
+                </Grid>
+
+                <Button Background="#FF80CD24"
+                        BorderThickness="0"
+                        Content="Choose File"
+                        Foreground="White"
+                        FontSize="20"
+                        Height="50"
+                        Width="150"
+                        Margin="0 30 0 0" Click="Button_Click">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10"/>
+
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                
+            </StackPanel>
+            
+            <!-- Uploading files list...-->
+            <ScrollViewer
+                Grid.Column="1"
+                Margin="0,45"
+                HorizontalScrollBarVisibility="Disabled"
+                VerticalScrollBarVisibility="Hidden">
+                <Grid>
+                    <ItemsControl x:Name="UploadingFileList">
+                        <TextBlock
+                            Text="Uploading files,"
+                            FontSize="20"
+                            FontWeight="SemiBold"/>
+                        <!-- Custom Controls here to show progress etc -->
+                    </ItemsControl>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Window>

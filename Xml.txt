@@ -1,0 +1,11 @@
+if(File.Exists("userdata.xml"))
+{
+	XmlSerializer xs=new XmlSerializer(typeof(Daten));
+	FileStream read=new FileStream("userdata.xml", FileMode.Open, FielAccess.Read, FileShare.Read);
+	Daten daten=(Daten) xs.Dserialize(read);
+	txt_name.Text=daten.NAME;
+	txt_ide.Text=daten.IDE;
+	txt_prog.Text=daten.PROG;
+}
+
+Daten Model

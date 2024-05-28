@@ -1,0 +1,46 @@
+﻿<Window x:Class="NinoSolutionsWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NinoSolutionsWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Label x:Name="lblEmployees" Content="Employee(s):0" HorizontalAlignment="Left" Margin="15,24,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="dgPersons"  Margin="0,65,0,0">
+            <DataGrid.Resources>
+                <Style TargetType="DataGridRow">
+                    <EventSetter Event="MouseDoubleClick"  Handler="DataGridRow_MouseDoubleClick"/>
+
+                </Style>
+                
+            </DataGrid.Resources>
+        </DataGrid>        
+        <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" Margin="695,19,0,0" VerticalAlignment="Top" AutomationProperties.Name="btnExit" Width="38" Click="btnExit_Click"/>
+        <Button x:Name="btnGetEmployees" Content="Get Employees" HorizontalAlignment="Left" Height="20" Margin="580,19,0,0" VerticalAlignment="Top" Width="85" Click="btnGetEmployees_Click"/>
+        <TextBox x:Name="TBXEmpName" HorizontalAlignment="Left" Margin="370,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="LblEmpId" Content="Emp Name:" HorizontalAlignment="Left" Margin="295,18,0,0" VerticalAlignment="Top" Height="29" FontSize="11" Width="70" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="0"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <TextBox x:Name="tbtEmpId_Copy" HorizontalAlignment="Left" Margin="170,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="LblEmpId_Copy" Content="Emp Id:" HorizontalAlignment="Left" Margin="115,20,0,0" VerticalAlignment="Top" Height="30" FontSize="11" Width="58" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="0"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+
+    </Grid>
+</Window>

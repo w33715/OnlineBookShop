@@ -1,0 +1,123 @@
+﻿<Window x:Class="KomponentenAndStyles.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KomponentenAndStyles"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Grid Background="{DynamicResource PrimaryBackgroundColor}">
+        <DockPanel>
+
+            <!--#region ToggleButton -->
+            <Border DockPanel.Dock="Left"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Margin="15"
+            Height="200" 
+                Width="200"
+                CornerRadius="10"
+                Background="{DynamicResource SecondaryBackgroundColor}">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+
+
+                    <CheckBox VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                      Style="{DynamicResource TogglebuttonStyle}"/>
+                    <CheckBox VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                          Margin="0 10 0 0"
+                      Style="{DynamicResource TogglebuttonStyle}"/>
+
+                    <CheckBox VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                          Margin="0 10 0 0"
+                      Style="{DynamicResource TogglebuttonStyle}"/>
+                    <CheckBox VerticalAlignment="Center"
+                  HorizontalAlignment="Center"
+                             
+                          Margin="0 10 0 0"
+                      Style="{DynamicResource  CheckBoxStyle1}"/>
+                </StackPanel>
+            </Border>
+
+            <!--#endregion ToggleButton-->
+            <!--#region TextBox -->
+            <Border DockPanel.Dock="Left"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Margin="15"
+            Height="auto" 
+                Width="200"
+                CornerRadius="10"
+                Background="{DynamicResource SecondaryBackgroundColor}">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Left"
+                        VerticalAlignment="Top" Height="auto">
+                    <TextBox Tag="Full Name"
+                             TextWrapping="NoWrap"
+                             Margin="20 20 0 0"
+                             Style="{DynamicResource TextBoxStyle}"/>
+                    <TextBox Tag="Center"
+                             TextWrapping="NoWrap"
+                             Margin="20 20 0 0"
+                             Style="{DynamicResource TextBoxStyle1}"/>
+                    <TextBox Tag="Description"
+                             TextWrapping="Wrap"
+                             Margin="20"
+                             Style="{DynamicResource TextBoxStyle2}"/>
+
+
+
+
+                </StackPanel>
+            </Border>
+            <!--#endregion TextBox -->
+
+            <!--#region Buttons -->
+            <Border DockPanel.Dock="Left"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Margin="15"
+            Height="250" 
+                Width="200"
+                CornerRadius="10"
+                Background="{DynamicResource SecondaryBackgroundColor}">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Left"
+                        VerticalAlignment="Top" Height="250">
+                    <Button Content="Primary Button" 
+                            Style="{DynamicResource PrimaryButtonStyle}"
+                           HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Margin="10"/>
+                    <Button Content="Secondary Button" 
+                            Style="{DynamicResource SecondaryButtonStyle}"
+                           HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Margin="10"/>
+                    <Button Content="Thirdary Button" 
+                            Style="{DynamicResource ThirdaryButtonStyle}"
+                           HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Margin="10"/>
+                    <DockPanel>
+                        <Button Content="Icon Button" 
+                            Style="{DynamicResource IconButtonStyle}"
+                           HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Margin="10,10,5,10"/>
+                        <Button Content="Icon Button" 
+                            Style="{DynamicResource IconTextButtonStyle}"
+                            Margin="10" Width="121"/>
+                    </DockPanel>
+
+                </StackPanel>
+            </Border>
+            <!--#endregion Buttons -->
+
+
+        </DockPanel>
+    </Grid>
+
+</Window>
